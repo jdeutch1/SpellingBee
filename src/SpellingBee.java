@@ -48,10 +48,10 @@ public class SpellingBee {
     }
 
     // Permutes through letters and creates every possible combination
-    public void permute(String word, String letters)
+    public void permute(String possWord, String letters)
     {
-        // Begin by adding the word that we pass in to words list
-        words.add(word);
+        // Begin by adding the possible word that we pass in to words list
+        words.add(possWord);
 
         // Base case
         if (letters.length() == 0)
@@ -65,9 +65,8 @@ public class SpellingBee {
         // We then remove the letter from letters for no duplicate letters in word
         for (int i = 0; i < letters.length(); i++)
         {
-            permute(word + letters.charAt(i), letters.substring(0,i) + letters.substring(i+1));
+            permute(possWord + letters.charAt(i), letters.substring(0, i) + letters.substring(i + 1));
         }
-
     }
 
     // TODO: Apply mergesort to sort all words. Do this by calling ANOTHER method
@@ -158,7 +157,7 @@ public class SpellingBee {
     public void checkWords() {
         for (int i = 0; i < words.size(); i++)
         {
-            if(!binarySearch(words.get(i), 0, DICTIONARY_SIZE))
+            if (!binarySearch(words.get(i), 0, DICTIONARY_SIZE))
             {
                 words.remove(i);
                 i--;
