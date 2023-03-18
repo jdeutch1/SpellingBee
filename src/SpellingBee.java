@@ -22,9 +22,9 @@ import java.util.Scanner;
  * It utilizes recursion to generate the strings, mergesort to sort them, and
  * binary search to find them in a dictionary.
  *
- * @author Zach Blick, [ADD YOUR NAME HERE]
+ * @author Zach Blick, Jackson Deutch
  *
- * Written on March 5, 2023 for CS2 @ Menlo School
+ * Written on March 17, 2023 for CS2 @ Menlo School
  *
  * DO NOT MODIFY MAIN OR ANY OF THE METHOD HEADERS.
  */
