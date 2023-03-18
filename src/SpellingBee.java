@@ -48,13 +48,13 @@ public class SpellingBee {
     }
 
     // Permutes through letters and creates every possible combination
-    public void permute(String possWord, String letters)
+    public void permute(String possWord, String leftLetters)
     {
         // Begin by adding the possible word that we pass in to words list
         words.add(possWord);
 
         // Base case
-        if (letters.length() == 0)
+        if (leftLetters.length() == 0)
         {
             return;
         }
@@ -63,9 +63,9 @@ public class SpellingBee {
         // Add each letter to word and then create a new recursive step for each word we make
         // Essentially a new branch (a new word) for each letter we add on
         // We then remove the letter from letters for no duplicate letters in word
-        for (int i = 0; i < letters.length(); i++)
+        for (int i = 0; i < leftLetters.length(); i++)
         {
-            permute(possWord + letters.charAt(i), letters.substring(0, i) + letters.substring(i + 1));
+            permute(possWord + leftLetters.charAt(i), leftLetters.substring(0, i) + leftLetters.substring(i + 1));
         }
     }
 
